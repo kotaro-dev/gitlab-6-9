@@ -34,6 +34,20 @@ module Gitlab
       system "#{gitlab_shell_path}/bin/gitlab-projects", "init-project", name, tmp_path, init_from_template, config_auto_init_template_dir, project_owner_name, project_owner_email
     end
 
+    # Init new repository from template
+    #
+    # name - project path with namespace
+    # template_path - template path with init-files
+    # current_user_name - username of the current user which created the project
+    # current_user_email - email of the current user which created the project
+    #
+    # Ex.
+    #   add_init_repository("gitlab/gitlab-ci", "/home/git/gitlab-templates/1/template-name", "template-name", "Administrator", "admin@local.host")
+    #
+    def add_init_repository(name, template_path, template_name, current_user_name, current_user_email)
+      system "#{gitlab_shell_path}/bin/gitlab-projects", "add-init-project", "#{name}.git", "#{template_path}", "#{template_name}", "#{current_user_name}", "#{current_user_email}"
+    end
+
     # Import repository
     #
     # name - project path with namespace
