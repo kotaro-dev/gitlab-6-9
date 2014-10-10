@@ -181,6 +181,12 @@ You can change `6-9-stable` to `master` if you want the *bleeding edge* version,
     sudo -u git -H mkdir /home/git/gitlab-satellites
     sudo chmod u+rwx,g+rx,o-rwx /home/git/gitlab-satellites
 
+    # Create directory for automatic project initialisation
+    # Put everything which should be included in every project
+    # If you do not want to copy such files, leave it empty, GitLab will create a README.md file for you
+    sudo -u git -H mkdir /home/git/gitlab-autoinit-template
+    sudo chmod u+rwx,g+rx,o-rwx /home/git/gitlab-autoinit-template
+
     # Make sure GitLab can write to the tmp/pids/ and tmp/sockets/ directories
     sudo chmod -R u+rwX tmp/pids/
     sudo chmod -R u+rwX tmp/sockets/

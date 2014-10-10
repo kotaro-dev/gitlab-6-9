@@ -62,8 +62,11 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       format.html do
-        if @project.empty_repo?
+#        if @project.empty_repo?
+         if (@project.empty_repo? && !@project.auto_init?) || (@project.empty_repo? && @project.import?)
           render "projects/empty", layout: user_layout
+        elsif @project.empty_repo? && @project.auto_init? && !@project.import?
+          render "projects/autoinit", layout: user_layout
         else
           @last_push = current_user.recent_push(@project.id) if current_user
           render :show, layout: user_layout

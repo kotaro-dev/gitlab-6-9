@@ -1,6 +1,10 @@
 class ProjectObserver < BaseObserver
   def after_create(project)
     log_info("#{project.owner.name} created a new project \"#{project.name_with_namespace}\"")
+
+    if project.auto_init?
+      ::Projects::AutoInitService.new(project).execute
+    end
   end
 
   def after_update(project)

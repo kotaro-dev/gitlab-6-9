@@ -223,6 +223,7 @@ ActiveRecord::Schema.define(version: 20140502125220) do
     t.boolean  "archived",               default: false,    null: false
     t.string   "import_status"
     t.float    "repository_size",        default: 0.0
+    t.boolean  "auto_init",              default: true,     null: false
   end
 
   add_index "projects", ["creator_id"], name: "index_projects_on_creator_id", using: :btree
