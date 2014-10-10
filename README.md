@@ -1,3 +1,13 @@
+### add following request , until these request be closed.  
+
+* [gitlab can now init repositories #6127](https://github.com/gitlabhq/gitlabhq/pull/6127/files)  
+* [Repo init #153](https://github.com/gitlabhq/gitlab-shell/pull/153/files)  
+* [Project Template for Project Creation #7069](https://github.com/gitlabhq/gitlabhq/pull/7069/files)  
+
+thank you Mr.pixel-shock.  
+[https://github.com/pixel-shock](https://github.com/pixel-shock)  
+
+
 ## GitLab: self hosted Git management software
 
 ![logo](https://gitlab.com/gitlab-org/gitlab-ce/raw/master/public/gitlab_logo.png)
