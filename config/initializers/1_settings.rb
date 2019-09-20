@@ -102,6 +102,8 @@ Settings.gitlab.default_projects_features['snippets']       = false if Settings.
 Settings.gitlab.default_projects_features['visibility_level']    = Settings.send(:verify_constant, Gitlab::VisibilityLevel, Settings.gitlab.default_projects_features['visibility_level'], Gitlab::VisibilityLevel::PRIVATE)
 Settings.gitlab.default_projects_features['auto_init']           = true if Settings.gitlab.default_projects_features['auto_init'].nil?
 Settings.gitlab['repository_downloads_path'] = File.absolute_path(Settings.gitlab['repository_downloads_path'] || 'tmp/repositories', Rails.root)
+Settings.gitlab['templates_path'] = File.join(File.absolute_path(Settings.gitlab['templates_path'] || Settings.gitlab['user_home'] + '/gitlab-templates'),'/')
+Settings.gitlab['templates_max_filesize'] =  Settings.gitlab['templates_max_filesize'] || 5242880
 
 #
 # Gravatar

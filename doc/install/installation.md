@@ -185,7 +185,11 @@ You can change `6-9-stable` to `master` if you want the *bleeding edge* version,
     # Put everything which should be included in every project
     # If you do not want to copy such files, leave it empty, GitLab will create a README.md file for you
     sudo -u git -H mkdir /home/git/gitlab-autoinit-template
-    sudo chmod u+rwx,g+rx,o-rwx /home/git/gitlab-autoinit-template
+    sudo chmod -R u+rwX /home/git/gitlab-autoinit-template
+
+   # Create directory for templates and make sure GitLab can write to it
+    sudo -u git -H mkdir /home/git/gitlab-templates
+    sudo chmod -R u+rwX /home/git/gitlab-templates
 
     # Make sure GitLab can write to the tmp/pids/ and tmp/sockets/ directories
     sudo chmod -R u+rwX tmp/pids/

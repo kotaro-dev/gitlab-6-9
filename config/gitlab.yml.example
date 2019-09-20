@@ -84,6 +84,10 @@ production: &base
     # The default is 'tmp/repositories' relative to the root of the Rails app.
     # repository_downloads_path: tmp/repositories
 
+    ## GitLab Templates
+    # templates_path: /home/git/gitlab-templates
+    # templates_max_filesize: 5242880
+
   ## External issues trackers
   issues_tracker:
     # redmine:
